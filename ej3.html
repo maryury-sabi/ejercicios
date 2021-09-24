@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 4 Notas</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="icons/all.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <label class="icono-menu" onclick="mostrarMenu()"><i class="fas fa-bars"></i></label>
+    <nav id="menu-principal" >
+
+        <ul class="menu"> 
+            <li><a href="index.html"> Inicio</a></li>
+            <li><a href="ej 1.html"> Horas de trabajo</a></li>
+            <li> <a href="ej2.html">Aumento  </a></li>
+            <li> <a href="ej3.html"> Nota definitiva</a></li>
+            <li> <a href="ej4.html"> 3 numeros</a></li> 
+        </ul>
+         </nav>
+         <div class=" main-content">
+         <h1>CALCULAR NOTA DEFINITIVA</h1>
+      <section>
+    <form action="#" method="POST">
+       <input type="number" id="n1" placeholder="digite la nota del P parcial" required class="cajas"> <br>
+       <input type="number" id="n2" placeholder="digite la nota del S parcial" required class="cajas"> <br>
+       <input type="number" id="n3" placeholder="digite la nota del T parcial" required class="cajas"> <br>
+       <input type="number" id="n4" placeholder="digite la nota del E final"required class="cajas"> <br>
+          <button type="button" onclick="calcular();">calcular</button><br>
+          <div id="gano"></div>
+          <div id="perdio"></div>
+          <div id="transicion"></div>
+  </form><br>
+
+</section>
+  
+  
+   
+    
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var n1 =document.getElementById('n1').value;
+        var n2 =document.getElementById('n2').value;
+        var n3 =document.getElementById('n3').value;
+        var n4 =document.getElementById('n4').value;
+       
+        var np1=parseInt(n1) * 0.20;
+        var np2=parseInt(n2) * 0.25;
+        var np3=parseInt(n3) * 0.30;
+        var np4=parseInt(n4) * 0.25;
+
+        var nota_d = (np1 + np2 + np3 + np4 );
+
+        if(nota_d >= 3 ){
+        document.getElementById('gano').innerHTML="<h1> Ganó la materia de programacion y su nota definitiva es = "+nota_d+"</h1>";
+
+      }
+      if( 2.5 < nota_d   && nota_d < 3){
+        document.getElementById('perdio').innerHTML="<h1> Perdió la materia de programacion y su nota definitiva es= "+nota_d+"</h1>";
+      }
+      if(nota_d <= 2.4){
+        document.getElementById('transicion').innerHTML="<h1> Quedó en transicion y su nota definitiva es = "+nota_d+"</h1>";
+      }           
+    }
+</script>
